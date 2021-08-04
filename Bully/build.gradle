@@ -1,0 +1,18 @@
+plugins {
+    id 'java-library'
+    id 'maven'
+}
+
+task run(type: JavaExec) {
+	classpath = sourceSets.main.runtimeClasspath
+	main = 'pt.ipb.bully.Application'
+	standardInput = System.in
+}
+
+dependencies {
+	compile group: 'org.jgroups', name: 'jgroups', version: '4.0.16.Final'
+}
+
+repositories {
+	mavenCentral()
+}
